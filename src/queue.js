@@ -31,7 +31,5 @@ class PriorityQueue {
 		return false;
 	}
 }
-// const q = new PriorityQueue();
-// q.push(0, 1);
-// console.log(q.shift());
+
 module.exports = PriorityQueue;

@@ -20,7 +20,6 @@ class MaxHeap {
 
 		let rootData = this.root.data;
 		let detached = this.detachRoot();
-		//detached = {};
 		this.restoreRootFromLastInsertedNode(detached);
 
 		if (this.root)
@@ -44,10 +43,6 @@ class MaxHeap {
 		let lastInsertedNode = this.parentNodes.pop();
 		if (!lastInsertedNode || !detached) return;
 		let lastInsertedNodeParent = lastInsertedNode.parent;
-		
-		/*let detachedInParentNodes = this.parentNodes.indexOf(detached);
-		if (detachedInParentNodes !== -1)
-			this.parentNodes.splice(detachedInParentNodes, 1); */
 
 		if (lastInsertedNodeParent && lastInsertedNodeParent.right == lastInsertedNode &&
 			lastInsertedNodeParent != detached)
@@ -150,7 +145,6 @@ class MaxHeap {
 		
 	}
 }
-// const h = new MaxHeap();
-//      console.log(h.size());
+
 module.exports = MaxHeap;
 
