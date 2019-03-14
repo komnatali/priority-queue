@@ -48,7 +48,13 @@ class Node {
 			if (parentLeft == this && parentRight != null)
 				sibl = parentRight;
 			else 
-				sibl = parentLeft;
+				if (parentRight == this)
+					sibl = parentLeft;
+
+			if (this.left)
+				this.left.parent = this.parent;
+			if (this.right)
+				this.right.parent = this.parent;
 
 			this.parent.parent = this;
 			if (parentLeft == this) {
@@ -59,8 +65,8 @@ class Node {
 				this.left = parentLeft;
 				this.right = this.parent;
 			}
-
-			sibl.parent = this;
+			if (sibl)
+				sibl.parent = this;
 			this.parent.left = thisLeft;
 			this.parent.right = thisRight;
 					
